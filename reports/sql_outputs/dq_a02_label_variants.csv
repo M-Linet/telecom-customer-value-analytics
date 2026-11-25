@@ -1,0 +1,39 @@
+field,value,n
+age_group,25-34,8106
+age_group,18-24,6398
+age_group,35-44,6227
+age_group,45-54,4552
+age_group,55+,3029
+age_group,25 - 34,87
+age_group,18 - 24,75
+age_group,45 - 54,52
+age_group,35 - 44,50
+customer_type,Prepaid,24948
+customer_type,Postpaid,3377
+customer_type,PREPAID,76
+customer_type,prepaid,74
+customer_type,Prepaid ,67
+customer_type,Postpaid ,15
+customer_type,postpaid,12
+customer_type,POSTPAID,7
+resolution_status,Resolved,8956
+resolution_status,Unresolved,1115
+resolution_status,Escalated,398
+resolution_status,RESOLVED,80
+resolution_status,UNRESOLVED,9
+resolution_status,ESCALATED,1
+service_type,Mobile Money Fees,548698
+service_type,Data Bundle,460089
+service_type,Combo Bundle,297999
+service_type,Voice Bundle,284216
+service_type,Postpaid Bill,77576
+service_type,SMS Bundle,74741
+service_type,M-Money fees,5651
+service_type,mobile money fees,5558
+service_type,data bundle,3201
+service_type,DATA BUNDLE,3161
+service_type,Data bndl,3110
+service_type,combo,3056
+service_type,Combo bundle,3029
+service_type,voice bundle,2975
+service_type,VOICE,2885

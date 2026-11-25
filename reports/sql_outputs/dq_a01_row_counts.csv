@@ -1,0 +1,7 @@
+table_name,raw_rows,distinct_keys
+campaigns,35523,35523
+complaints,10559,10559
+customers,28576,28496
+subscriptions,31539,31539
+transactions,1775945,1770634
+usage_monthly,561549,560429

@@ -1,0 +1,13 @@
+value_tier,complaint_experience,customers,churned,churned_pct
+,a) No complaint,15079,2988,19.8
+,b) Resolved within 7 days,1042,141,13.5
+,c) Resolved after 7+ days,351,41,11.7
+,d) Unresolved or escalated,233,58,24.9
+Higher value (Platinum/Gold),a) No complaint,4135,534,12.9
+Higher value (Platinum/Gold),b) Resolved within 7 days,334,31,9.3
+Higher value (Platinum/Gold),c) Resolved after 7+ days,117,7,6.0
+Higher value (Platinum/Gold),d) Unresolved or escalated,73,14,19.2
+Lower value (Silver/Bronze),a) No complaint,10944,2454,22.4
+Lower value (Silver/Bronze),b) Resolved within 7 days,708,110,15.5
+Lower value (Silver/Bronze),c) Resolved after 7+ days,234,34,14.5
+Lower value (Silver/Bronze),d) Unresolved or escalated,160,44,27.5

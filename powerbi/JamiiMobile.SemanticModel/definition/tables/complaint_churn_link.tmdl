@@ -1,0 +1,45 @@
+table complaint_churn_link
+	lineageTag: 7f57b4e0-2b0c-5d41-a654-bc009bde1851
+
+	column value_tier
+		dataType: string
+		lineageTag: 4abd22bf-a1e1-50f9-ae03-285817506f56
+		summarizeBy: none
+		sourceColumn: value_tier
+
+	column complaint_experience
+		dataType: string
+		lineageTag: 1e6d84f8-3ed4-577f-ae52-bd628f6c5588
+		summarizeBy: none
+		sourceColumn: complaint_experience
+
+	column customers
+		dataType: int64
+		formatString: 0
+		lineageTag: d25089e5-7eb7-58e3-9a23-3ada5efd1d00
+		summarizeBy: sum
+		sourceColumn: customers
+
+	column churned
+		dataType: int64
+		formatString: 0
+		lineageTag: 5601de7b-27fc-54b8-a19b-fea08b5ebd47
+		summarizeBy: sum
+		sourceColumn: churned
+
+	column churned_pct
+		dataType: double
+		lineageTag: 26d4132a-7046-50fc-83dc-3252a0294cc9
+		summarizeBy: none
+		sourceColumn: churned_pct
+
+	partition complaint_churn_link = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "complaint_churn_link.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"value_tier", type text}, {"complaint_experience", type text}, {"customers", Int64.Type}, {"churned", Int64.Type}, {"churned_pct", type number}}, "en-US")
+				in
+				    Typed
+

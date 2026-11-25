@@ -1,0 +1,6 @@
+value_segment,customers,customer_share_pct,revenue_kes,revenue_share_pct,avg_monthly_revenue_kes,churned_pct,postpaid_pct
+Platinum (top 10%),2807,9.9,165534252.0,36.4,2464.0,8.5,72.2
+Gold (next 20%),5613,19.7,96520987.0,21.2,797.0,20.2,6.0
+Silver (next 30%),8418,29.5,121871190.0,26.8,596.0,23.8,5.1
+Unsegmented (too new),434,1.5,240528.0,0.1,554.0,0.0,11.1
+Bronze (bottom 40%),11224,39.4,70830430.0,15.6,264.0,42.6,5.0

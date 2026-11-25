@@ -1,0 +1,27 @@
+period,customer_type,value_segment,monthly_churn_pct
+a) Before (Mar-Oct 2025),Postpaid,Bronze (bottom 40%),1.22
+b) After (Nov 2025-Feb 2026),Postpaid,Bronze (bottom 40%),1.23
+c) Later (Mar-Oct 2026),Postpaid,Bronze (bottom 40%),1.38
+a) Before (Mar-Oct 2025),Postpaid,Gold (next 20%),0.71
+b) After (Nov 2025-Feb 2026),Postpaid,Gold (next 20%),0.4
+c) Later (Mar-Oct 2026),Postpaid,Gold (next 20%),0.76
+a) Before (Mar-Oct 2025),Postpaid,Platinum (top 10%),0.33
+b) After (Nov 2025-Feb 2026),Postpaid,Platinum (top 10%),0.32
+c) Later (Mar-Oct 2026),Postpaid,Platinum (top 10%),0.35
+a) Before (Mar-Oct 2025),Postpaid,Silver (next 30%),0.54
+b) After (Nov 2025-Feb 2026),Postpaid,Silver (next 30%),0.53
+c) Later (Mar-Oct 2026),Postpaid,Silver (next 30%),0.7
+c) Later (Mar-Oct 2026),Postpaid,Unsegmented (too new),
+a) Before (Mar-Oct 2025),Prepaid,Bronze (bottom 40%),2.37
+b) After (Nov 2025-Feb 2026),Prepaid,Bronze (bottom 40%),3.62
+c) Later (Mar-Oct 2026),Prepaid,Bronze (bottom 40%),2.15
+a) Before (Mar-Oct 2025),Prepaid,Gold (next 20%),1.17
+b) After (Nov 2025-Feb 2026),Prepaid,Gold (next 20%),1.23
+c) Later (Mar-Oct 2026),Prepaid,Gold (next 20%),1.2
+a) Before (Mar-Oct 2025),Prepaid,Platinum (top 10%),0.62
+b) After (Nov 2025-Feb 2026),Prepaid,Platinum (top 10%),0.55
+c) Later (Mar-Oct 2026),Prepaid,Platinum (top 10%),0.89
+a) Before (Mar-Oct 2025),Prepaid,Silver (next 30%),1.13
+b) After (Nov 2025-Feb 2026),Prepaid,Silver (next 30%),1.42
+c) Later (Mar-Oct 2026),Prepaid,Silver (next 30%),1.26
+c) Later (Mar-Oct 2026),Prepaid,Unsegmented (too new),

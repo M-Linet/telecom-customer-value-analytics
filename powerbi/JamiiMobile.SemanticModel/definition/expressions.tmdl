@@ -1,0 +1,4 @@
+expression DataFolder = "C:\data analyst portfolio\telecom-customer-value-analytics\data\processed\powerbi\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: e639f573-e141-5f21-985e-f74ce2c99559
+
+	annotation PBI_ResultType = Text

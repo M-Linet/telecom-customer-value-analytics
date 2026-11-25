@@ -1,0 +1,72 @@
+{
+  "name": "Jamii Mobile control room",
+  "dataColors": [
+    "#3987e5",
+    "#d95926",
+    "#199e70",
+    "#c98500",
+    "#d55181",
+    "#0ca30c",
+    "#9085e9",
+    "#e66767"
+  ],
+  "foreground": "#f0efec",
+  "foregroundNeutralSecondary": "#a9b0ba",
+  "background": "#1b2027",
+  "backgroundLight": "#20262e",
+  "tableAccent": "#2ec4a0",
+  "good": "#1baf7a",
+  "neutral": "#eda100",
+  "bad": "#e34948",
+  "maximum": "#0d366b",
+  "center": "#6da7ec",
+  "minimum": "#cde2fb",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 13,
+      "color": "#f0efec"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 9,
+      "color": "#a9b0ba"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 22,
+      "color": "#f0efec"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#1b2027"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#11151a"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  },
+  "backgroundNeutral": "#2c333d"
+}

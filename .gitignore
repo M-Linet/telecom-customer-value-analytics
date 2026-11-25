@@ -1,0 +1,26 @@
+# secrets
+.env
+# generated data (rebuild with: python scripts/run_all.py)
+data/synthetic/raw/*.csv
+data/processed/powerbi/
+data/raw/*
+!data/raw/.gitkeep
+# python / jupyter
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Power BI temp files
+*.pbix.bak
+~$*
+# Power BI project local files
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

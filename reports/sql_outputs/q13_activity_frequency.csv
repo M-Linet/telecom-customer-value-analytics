@@ -1,0 +1,6 @@
+value_segment,pct_months_active,avg_transactions_per_active_month
+Platinum (top 10%),97.0,2.5
+Unsegmented (too new),96.3,3.3
+Gold (next 20%),94.0,3.6
+Silver (next 30%),93.0,3.5
+Bronze (bottom 40%),81.7,2.7

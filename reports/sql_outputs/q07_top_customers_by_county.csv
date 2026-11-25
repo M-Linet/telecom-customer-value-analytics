@@ -1,0 +1,40 @@
+customer_id,county,customer_type,plan_type,value_segment,engagement_status,avg_monthly_revenue_kes,rank_in_county
+C009172,Garissa,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5760.0,1
+C013649,Garissa,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4366.0,2
+C026219,Garissa,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4158.0,3
+C023162,Kakamega,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5184.0,1
+C021734,Kakamega,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5011.0,2
+C005141,Kakamega,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4245.0,3
+C026101,Kiambu,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5723.0,1
+C027276,Kiambu,Postpaid,Postpaid Business,Platinum (top 10%),Too new to assess,4881.0,2
+C027907,Kiambu,Postpaid,Postpaid Business,Platinum (top 10%),Too new to assess,4687.0,3
+C013071,Kilifi,Prepaid,Prepaid Flex,Platinum (top 10%),Stable or growing,5299.0,1
+C004152,Kilifi,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4639.0,2
+C027771,Kilifi,Postpaid,Postpaid Business,Platinum (top 10%),Too new to assess,4383.0,3
+C026261,Kisumu,Prepaid,Prepaid Flex,Platinum (top 10%),Stable or growing,4758.0,1
+C027226,Kisumu,Postpaid,Postpaid Business,Platinum (top 10%),Too new to assess,4609.0,2
+C002047,Kisumu,Prepaid,Prepaid Flex,Platinum (top 10%),Stable or growing,4484.0,3
+C001968,Machakos,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5347.0,1
+C018653,Machakos,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5333.0,2
+C025667,Machakos,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5088.0,3
+C015660,Mombasa,Prepaid,Prepaid Flex,Platinum (top 10%),Stable or growing,5701.0,1
+C020088,Mombasa,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5487.0,2
+C018082,Mombasa,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4794.0,3
+C022401,Nairobi,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5806.0,1
+C004998,Nairobi,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5660.0,2
+C003449,Nairobi,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5349.0,3
+C004997,Nakuru,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5411.0,1
+C015309,Nakuru,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4993.0,2
+C023109,Nakuru,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4776.0,3
+C005584,Nyeri,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5357.0,1
+C010097,Nyeri,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4467.0,2
+C022589,Nyeri,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4363.0,3
+C011143,Turkana,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5168.0,1
+C007527,Turkana,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5127.0,2
+C027895,Turkana,Postpaid,Postpaid Business,Platinum (top 10%),Too new to assess,4767.0,3
+C013582,Uasin Gishu,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,5082.0,1
+C028034,Uasin Gishu,Postpaid,Postpaid Business,Platinum (top 10%),Too new to assess,4921.0,2
+C023136,Uasin Gishu,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4793.0,3
+C020949,Unknown,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4226.0,1
+C027047,Unknown,Postpaid,Postpaid Business,Platinum (top 10%),Too new to assess,4100.0,2
+C005788,Unknown,Postpaid,Postpaid Business,Platinum (top 10%),Stable or growing,4095.0,3

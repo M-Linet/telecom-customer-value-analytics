@@ -1,0 +1,46 @@
+table fact_campaigns
+	lineageTag: c941dbb2-024e-5aa0-b9cd-63387777e06b
+
+	column campaign_id
+		dataType: string
+		lineageTag: cc45784e-6aad-5a08-9eb1-24550f3e9aa8
+		summarizeBy: none
+		sourceColumn: campaign_id
+
+	column customer_id
+		dataType: string
+		isHidden
+		lineageTag: d3b36c57-123e-5e40-81a8-816d9ee60e4c
+		summarizeBy: none
+		sourceColumn: customer_id
+
+	column month
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		isHidden
+		lineageTag: 9c47884a-dad3-58ef-90b3-eb946b447da2
+		summarizeBy: none
+		sourceColumn: month
+
+	column campaign_type
+		dataType: string
+		lineageTag: 384788e0-f1da-5649-9fcd-12e9ddad92e9
+		summarizeBy: none
+		sourceColumn: campaign_type
+
+	column campaign_response
+		dataType: string
+		lineageTag: 34e1bdf3-3b54-5dd5-a056-11949ed7edef
+		summarizeBy: none
+		sourceColumn: campaign_response
+
+	partition fact_campaigns = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_campaigns.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"campaign_id", type text}, {"customer_id", type text}, {"month", type date}, {"campaign_type", type text}, {"campaign_response", type text}}, "en-US")
+				in
+				    Typed
+

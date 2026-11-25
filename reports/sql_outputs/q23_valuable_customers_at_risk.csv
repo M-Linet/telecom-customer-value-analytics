@@ -1,0 +1,51 @@
+customer_id,customer_type,plan_type,county,age_group,value_segment,engagement_status,monthly_revenue_may_jul_kes,monthly_revenue_aug_oct_kes,open_complaints,priority
+C005343,Postpaid,Postpaid Business,Kisumu,35-44,Platinum (top 10%),Declining (>50% revenue drop),5299.0,1371.0,0,1
+C022979,Postpaid,Postpaid Business,Turkana,45-54,Platinum (top 10%),Declining (>50% revenue drop),3689.0,384.0,0,2
+C020773,Postpaid,Postpaid Business,Kilifi,35-44,Platinum (top 10%),Declining (>50% revenue drop),2957.0,314.0,0,3
+C018658,Postpaid,Postpaid Business,Kiambu,35-44,Platinum (top 10%),Declining (>50% revenue drop),3513.0,954.0,0,4
+C012892,Postpaid,Postpaid Business,Mombasa,35-44,Platinum (top 10%),Declining (>50% revenue drop),3455.0,1005.0,0,5
+C023713,Postpaid,Postpaid Business,Kakamega,25-34,Platinum (top 10%),Declining (>50% revenue drop),3669.0,1554.0,0,6
+C017245,Postpaid,Postpaid Business,Nakuru,25-34,Platinum (top 10%),Declining (>50% revenue drop),2906.0,906.0,0,7
+C017048,Postpaid,Postpaid Business,Kilifi,35-44,Platinum (top 10%),Declining (>50% revenue drop),2318.0,329.0,0,8
+C010045,Postpaid,Postpaid Business,Nairobi,45-54,Platinum (top 10%),Declining (>50% revenue drop),3043.0,1133.0,0,9
+C005490,Postpaid,Postpaid Business,Nairobi,25-34,Platinum (top 10%),Declining (>50% revenue drop),3054.0,1237.0,0,10
+C017942,Prepaid,Prepaid Flex,Kisumu,25-34,Platinum (top 10%),Declining (>50% revenue drop),2197.0,408.0,0,11
+C024068,Prepaid,Prepaid Flex,Nairobi,55+,Platinum (top 10%),Declining (>50% revenue drop),2389.0,811.0,0,12
+C025101,Prepaid,Prepaid Data Plus,Kiambu,25-34,Platinum (top 10%),Declining (>50% revenue drop),1658.0,260.0,0,13
+C025357,Prepaid,Prepaid Data Plus,Mombasa,25-34,Platinum (top 10%),Declining (>50% revenue drop),1577.0,282.0,0,14
+C005020,Prepaid,Prepaid Data Plus,Nairobi,18-24,Gold (next 20%),Declining (>50% revenue drop),1520.0,344.0,0,15
+C024561,Prepaid,Prepaid Data Plus,Machakos,25-34,Gold (next 20%),Declining (>50% revenue drop),1213.0,129.0,0,16
+C014938,Prepaid,Prepaid Data Plus,Kakamega,35-44,Gold (next 20%),Declining (>50% revenue drop),1215.0,132.0,0,17
+C017503,Prepaid,Prepaid Flex,Turkana,35-44,Gold (next 20%),Declining (>50% revenue drop),1178.0,98.0,0,18
+C017075,Prepaid,Prepaid Data Plus,Machakos,18-24,Gold (next 20%),Declining (>50% revenue drop),1461.0,390.0,0,19
+C021698,Prepaid,Prepaid Data Plus,Kisumu,25-34,Platinum (top 10%),Declining (>50% revenue drop),1204.0,135.0,0,20
+C018297,Prepaid,Prepaid Data Plus,Nairobi,18-24,Platinum (top 10%),Declining (>50% revenue drop),1189.0,148.0,0,21
+C017472,Prepaid,Prepaid Flex,Nyeri,35-44,Platinum (top 10%),Declining (>50% revenue drop),1903.0,866.0,0,22
+C023760,Prepaid,Prepaid Data Plus,Kiambu,25-34,Platinum (top 10%),Declining (>50% revenue drop),1558.0,530.0,0,23
+C003877,Prepaid,Prepaid Data Plus,Kilifi,25-34,Platinum (top 10%),Declining (>50% revenue drop),1283.0,269.0,0,24
+C018830,Prepaid,Prepaid Data Plus,Nairobi,18-24,Gold (next 20%),Declining (>50% revenue drop),1146.0,142.0,0,25
+C025622,Prepaid,Prepaid Data Plus,Kakamega,25-34,Platinum (top 10%),Declining (>50% revenue drop),1492.0,501.0,0,26
+C001807,Postpaid,Postpaid Basic,Turkana,18-24,Gold (next 20%),Declining (>50% revenue drop),1115.0,125.0,2,27
+C025892,Prepaid,Prepaid Data Plus,Kisumu,18-24,Gold (next 20%),Declining (>50% revenue drop),1154.0,164.0,0,28
+C017136,Prepaid,Prepaid Data Plus,Machakos,25-34,Platinum (top 10%),Declining (>50% revenue drop),1135.0,167.0,0,29
+C016691,Prepaid,Prepaid Flex,Nairobi,45-54,Gold (next 20%),Declining (>50% revenue drop),1091.0,134.0,0,30
+C018271,Prepaid,Prepaid Flex,Unknown,35-44,Gold (next 20%),Declining (>50% revenue drop),1084.0,136.0,0,31
+C022491,Prepaid,Prepaid Data Plus,Mombasa,35-44,Gold (next 20%),Declining (>50% revenue drop),1003.0,59.0,0,32
+C018714,Prepaid,Prepaid Data Plus,Nairobi,18-24,Gold (next 20%),Declining (>50% revenue drop),1076.0,138.0,0,33
+C019074,Prepaid,Prepaid Data Plus,Machakos,25-34,Platinum (top 10%),Declining (>50% revenue drop),1497.0,567.0,0,34
+C025598,Prepaid,Prepaid Data Plus,Nairobi,18-24,Gold (next 20%),Declining (>50% revenue drop),1035.0,111.0,1,35
+C021342,Prepaid,Prepaid Data Plus,Nakuru,18-24,Platinum (top 10%),Declining (>50% revenue drop),1035.0,113.0,0,36
+C025583,Prepaid,Prepaid Data Plus,Kilifi,25-34,Gold (next 20%),Declining (>50% revenue drop),1010.0,98.0,0,37
+C012819,Prepaid,Prepaid Flex,Nairobi,45-54,Gold (next 20%),Declining (>50% revenue drop),1048.0,148.0,0,38
+C001165,Prepaid,Prepaid Flex,Turkana,25-34,Gold (next 20%),Declining (>50% revenue drop),979.0,78.0,0,39
+C025490,Prepaid,Prepaid Data Plus,Mombasa,25-34,Gold (next 20%),Declining (>50% revenue drop),1068.0,175.0,0,40
+C024372,Prepaid,Prepaid Data Plus,Mombasa,35-44,Platinum (top 10%),Declining (>50% revenue drop),1034.0,148.0,0,41
+C008155,Prepaid,Prepaid Data Plus,Nairobi,18-24,Gold (next 20%),Declining (>50% revenue drop),1000.0,125.0,0,42
+C024453,Prepaid,Prepaid Data Plus,Nairobi,18-24,Platinum (top 10%),Declining (>50% revenue drop),993.0,123.0,0,43
+C005199,Prepaid,Prepaid Flex,Garissa,45-54,Gold (next 20%),Declining (>50% revenue drop),1069.0,199.0,0,44
+C003468,Prepaid,Prepaid Data Plus,Nairobi,18-24,Platinum (top 10%),Declining (>50% revenue drop),1007.0,137.0,0,45
+C010627,Prepaid,Prepaid Data Plus,Nyeri,18-24,Gold (next 20%),Declining (>50% revenue drop),1169.0,300.0,1,46
+C010611,Prepaid,Prepaid Data Plus,Nakuru,18-24,Gold (next 20%),Declining (>50% revenue drop),985.0,121.0,0,47
+C011512,Prepaid,Prepaid Data Plus,Kiambu,25-34,Gold (next 20%),Declining (>50% revenue drop),1206.0,350.0,0,48
+C024079,Prepaid,Prepaid Data Plus,Nyeri,18-24,Platinum (top 10%),Declining (>50% revenue drop),1338.0,491.0,0,49
+C021271,Prepaid,Prepaid Flex,Nairobi,45-54,Gold (next 20%),Declining (>50% revenue drop),949.0,103.0,0,50

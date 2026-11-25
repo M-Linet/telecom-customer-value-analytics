@@ -1,0 +1,107 @@
+table fact_customer_month
+	lineageTag: ed777967-5192-5638-96bc-5765ad62f1c4
+
+	column customer_id
+		dataType: string
+		isHidden
+		lineageTag: 7cc58e99-3300-5567-86ca-506a29c64774
+		summarizeBy: none
+		sourceColumn: customer_id
+
+	column month
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		isHidden
+		lineageTag: a0e8e188-7bfa-5813-9b04-876fb328b233
+		summarizeBy: none
+		sourceColumn: month
+
+	column tenure_months
+		dataType: int64
+		formatString: 0
+		lineageTag: f3966467-b215-5755-b7b6-c18b538ea65c
+		summarizeBy: none
+		sourceColumn: tenure_months
+
+	column tenure_band
+		dataType: string
+		lineageTag: 62a507be-44b6-5f48-883e-00f2fd84d101
+		summarizeBy: none
+		sourceColumn: tenure_band
+		sortByColumn: tenure_band_order
+
+	column tenure_band_order
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: fa59cf13-5584-5e1e-937c-57c47ee32763
+		summarizeBy: none
+		sourceColumn: tenure_band_order
+
+	column revenue
+		dataType: decimal
+		formatString: #,0
+		lineageTag: ee290fab-fdc9-551e-bb0b-aeb7fa3d4ed8
+		summarizeBy: sum
+		sourceColumn: revenue
+
+	column transactions
+		dataType: int64
+		formatString: 0
+		lineageTag: 42082dab-6d88-5fdb-b4b2-aa4741ab9f9e
+		summarizeBy: sum
+		sourceColumn: transactions
+
+	column data_mb
+		dataType: double
+		lineageTag: de78151c-3c90-5723-87fd-8f2dbfd9ded4
+		summarizeBy: sum
+		sourceColumn: data_mb
+
+	column voice_minutes
+		dataType: double
+		lineageTag: 1d562d74-53b2-510d-a1e7-35a62497585a
+		summarizeBy: sum
+		sourceColumn: voice_minutes
+
+	column sms_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 570c6fbb-4bea-5dbc-9f51-057f9f1eefde
+		summarizeBy: sum
+		sourceColumn: sms_count
+
+	column is_active
+		dataType: boolean
+		lineageTag: 967d84ac-8c4c-5bcd-affa-13e34ab45286
+		summarizeBy: none
+		sourceColumn: is_active
+
+	column in_opening_base
+		dataType: boolean
+		lineageTag: 100ab2a3-f8d0-5565-91c7-b1bc343b2705
+		summarizeBy: none
+		sourceColumn: in_opening_base
+
+	column is_churn_month
+		dataType: boolean
+		lineageTag: f27a5158-7ece-5454-8b2a-7b5b286dde49
+		summarizeBy: none
+		sourceColumn: is_churn_month
+
+	column is_new_customer_month
+		dataType: boolean
+		lineageTag: ab6f4a11-3bda-52d8-9eea-fedc4adbab37
+		summarizeBy: none
+		sourceColumn: is_new_customer_month
+
+	partition fact_customer_month = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_customer_month.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"customer_id", type text}, {"month", type date}, {"tenure_months", Int64.Type}, {"tenure_band", type text}, {"tenure_band_order", Int64.Type}, {"revenue", Currency.Type}, {"transactions", Int64.Type}, {"data_mb", type number}, {"voice_minutes", type number}, {"sms_count", Int64.Type}, {"is_active", type logical}, {"in_opening_base", type logical}, {"is_churn_month", type logical}, {"is_new_customer_month", type logical}}, "en-US")
+				in
+				    Typed
+

@@ -1,0 +1,18 @@
+source_table,issue,action_taken,records
+campaigns,missing response,set to 'Unknown',710
+complaints,category label case,standardised,120
+complaints,status label case,standardised,90
+complaints,resolution date before complaint date,resolution_date set to NULL; status kept,30
+customers,missing county,left NULL (reported as Unknown),854
+customers,age group label with spaces,standardised,264
+customers,customer type label variant,standardised,250
+customers,exact duplicate row,removed duplicate copy,80
+customers,acquisition date outside data range (year typo),replaced with first subscription start,12
+transactions,service type label variant,mapped to canonical service,32509
+transactions,exact duplicate row,removed duplicate copy,5311
+transactions,negative amount (reversal),moved to telco.reversals,3533
+transactions,customer_id not in customer master,quarantined,46
+transactions,amount above service plausibility limit (x1000 keying pattern),quarantined,30
+usage_monthly,exact duplicate row,removed duplicate copy,1120
+usage_monthly,negative data reading,data_mb set to NULL (row kept: voice/SMS valid),25
+usage_monthly,meter sentinel value 999999999,data_mb set to NULL (row kept: voice/SMS valid),20

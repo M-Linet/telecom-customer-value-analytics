@@ -1,0 +1,11 @@
+kpi,expected_value
+"Revenue, all months",454997387.0
+"Revenue, Oct 2026",17926225.0
+"Active customers, Oct 2026",19182.0
+"Subscribed base, Oct 2026 (rows in grid)",20620.0
+"ARPU, Oct 2026",934.53
+"Avg monthly churn %, May 2024-Oct 2026",1.532
+"Churn %, prepaid, May 2024-Oct 2026",1.684
+"Complaints, all",10559.0
+"Avg days to resolve, Network coverage",12.79
+"Customers, total",28496.0

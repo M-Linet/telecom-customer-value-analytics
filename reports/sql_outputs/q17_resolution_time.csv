@@ -1,0 +1,7 @@
+complaint_category,complaints,avg_days_to_resolve,median_days,p90_days,unresolved_or_escalated_pct
+Network coverage,2332,12.8,10.0,27.0,29.8
+Data speed,2191,7.6,6.0,15.0,19.4
+Mobile money,1570,5.5,5.0,11.0,7.8
+Customer service,1476,3.4,3.0,6.0,7.2
+Billing,1764,2.5,2.0,5.0,6.5
+SIM & device,1226,2.5,2.0,5.0,4.7

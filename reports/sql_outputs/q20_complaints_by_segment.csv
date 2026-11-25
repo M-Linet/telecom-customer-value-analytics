@@ -1,0 +1,11 @@
+value_segment,customer_type,customers,pct_ever_complained,complaints_per_1000_customer_months,unresolved_share_pct
+Bronze (bottom 40%),Postpaid,561,29.1,15.7,16.8
+Bronze (bottom 40%),Prepaid,10663,25.5,15.9,13.9
+Gold (next 20%),Postpaid,337,27.9,17.5,15.6
+Gold (next 20%),Prepaid,5276,28.7,17.3,14.9
+Platinum (top 10%),Postpaid,2028,45.9,27.0,14.5
+Platinum (top 10%),Prepaid,779,28.1,19.2,11.2
+Silver (next 30%),Postpaid,429,34.0,17.1,14.3
+Silver (next 30%),Prepaid,7989,31.1,17.0,14.8
+Unsegmented (too new),Postpaid,48,2.1,20.8,0.0
+Unsegmented (too new),Prepaid,386,2.8,28.5,27.3

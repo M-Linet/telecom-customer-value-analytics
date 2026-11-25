@@ -1,0 +1,122 @@
+table dim_customer
+	lineageTag: a1760895-decc-5bad-8563-a7c18a789bf3
+
+	column customer_id
+		dataType: string
+		lineageTag: d6d7ca1d-3d34-558c-b882-b885955fd472
+		summarizeBy: none
+		sourceColumn: customer_id
+
+	column customer_type
+		dataType: string
+		lineageTag: 07aa56ff-73fb-5522-8844-bf1a9c9decf5
+		summarizeBy: none
+		sourceColumn: customer_type
+
+	column age_group
+		dataType: string
+		lineageTag: 04ffe957-9ef4-50b7-97b5-0b555b89a3e0
+		summarizeBy: none
+		sourceColumn: age_group
+
+	column county
+		dataType: string
+		lineageTag: 9f232423-0f25-541b-9ef7-9f4b70ff12d9
+		summarizeBy: none
+		sourceColumn: county
+
+	column plan_type
+		dataType: string
+		lineageTag: fe00b4cd-f729-52d2-963e-440441ec8a4b
+		summarizeBy: none
+		sourceColumn: plan_type
+
+	column cohort_month
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 84f70b8c-2aad-5593-b6e4-9f58f7635da4
+		summarizeBy: none
+		sourceColumn: cohort_month
+
+	column cohort_label
+		dataType: string
+		lineageTag: 49b19c2b-7387-54be-b33f-0824a1d9565d
+		summarizeBy: none
+		sourceColumn: cohort_label
+
+	column acquired_in_window
+		dataType: boolean
+		lineageTag: a3338888-dee9-54f9-8486-875e0c1317b5
+		summarizeBy: none
+		sourceColumn: acquired_in_window
+
+	column value_segment
+		dataType: string
+		lineageTag: f6e50499-e558-5f6f-a8a2-2b2814005d58
+		summarizeBy: none
+		sourceColumn: value_segment
+
+	column engagement_status
+		dataType: string
+		lineageTag: 38f389fe-782b-5c1d-b6f7-90e2ee3f3f33
+		summarizeBy: none
+		sourceColumn: engagement_status
+
+	column churned
+		dataType: boolean
+		lineageTag: bd3f0024-be3d-50b5-8e69-8bf9ffa7b7d7
+		summarizeBy: none
+		sourceColumn: churned
+
+	column tenure_months
+		dataType: int64
+		formatString: 0
+		lineageTag: 50af7b8d-7a83-5b44-810a-8d929c53c86a
+		summarizeBy: none
+		sourceColumn: tenure_months
+
+	column avg_monthly_revenue
+		dataType: decimal
+		formatString: #,0
+		lineageTag: 474adf5c-d290-5a07-a865-2c9431adb549
+		summarizeBy: none
+		sourceColumn: avg_monthly_revenue
+
+	column rev_may_jul_2026
+		dataType: decimal
+		formatString: #,0
+		lineageTag: 81cfa210-66f2-53a9-a4b3-9de39fafba2a
+		summarizeBy: none
+		sourceColumn: rev_may_jul_2026
+
+	column rev_aug_oct_2026
+		dataType: decimal
+		formatString: #,0
+		lineageTag: 13107f2d-1cf4-59eb-9baa-86a26f8c4200
+		summarizeBy: none
+		sourceColumn: rev_aug_oct_2026
+
+	column complaints
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c1e3225-d2ca-5342-9b01-8d827f5cf52d
+		summarizeBy: none
+		sourceColumn: complaints
+
+	column open_complaints
+		dataType: int64
+		formatString: 0
+		lineageTag: 36c33f9e-48f0-59a3-8556-b030d516e757
+		summarizeBy: none
+		sourceColumn: open_complaints
+
+	partition dim_customer = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_customer.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"customer_id", type text}, {"customer_type", type text}, {"age_group", type text}, {"county", type text}, {"plan_type", type text}, {"cohort_month", type date}, {"cohort_label", type text}, {"acquired_in_window", type logical}, {"value_segment", type text}, {"engagement_status", type text}, {"churned", type logical}, {"tenure_months", Int64.Type}, {"avg_monthly_revenue", Currency.Type}, {"rev_may_jul_2026", Currency.Type}, {"rev_aug_oct_2026", Currency.Type}, {"complaints", Int64.Type}, {"open_complaints", Int64.Type}}, "en-US")
+				in
+				    Typed
+

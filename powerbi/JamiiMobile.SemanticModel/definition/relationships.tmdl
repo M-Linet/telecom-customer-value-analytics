@@ -1,0 +1,31 @@
+relationship 9806707d-ee4a-531e-b229-5bb4de656d03
+	fromColumn: fact_customer_month.month
+	toColumn: dim_date.date
+
+relationship baaeed3e-dfea-5d3e-a127-3a027bfb0dd9
+	fromColumn: fact_customer_month.customer_id
+	toColumn: dim_customer.customer_id
+
+relationship 7e648a49-9970-5ad3-9008-573ad554df8d
+	fromColumn: fact_service_revenue.month
+	toColumn: dim_date.date
+
+relationship a17f2396-ebe1-51e8-bacd-967436c83a8d
+	fromColumn: fact_service_revenue.customer_id
+	toColumn: dim_customer.customer_id
+
+relationship f60ffa7c-4f61-5bcb-baf5-e581ba636457
+	fromColumn: fact_complaints.month
+	toColumn: dim_date.date
+
+relationship f74c248f-d9dd-5a45-9845-8e6159f0a729
+	fromColumn: fact_complaints.customer_id
+	toColumn: dim_customer.customer_id
+
+relationship 01f5b77c-1fe0-5b44-9cb1-c7bbc470e750
+	fromColumn: fact_campaigns.month
+	toColumn: dim_date.date
+
+relationship 4a434043-aaae-5123-b5cb-ab24e5554d08
+	fromColumn: fact_campaigns.customer_id
+	toColumn: dim_customer.customer_id

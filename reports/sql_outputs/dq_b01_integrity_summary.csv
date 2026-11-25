@@ -1,0 +1,9 @@
+check_name,failures
+duplicate customer-month usage rows,0
+customers with no subscription row,0
+customers with more than one open subscription,0
+customers with more than one churn record,0
+transactions before acquisition,0
+transactions after line closed,0
+acquisition date not equal to first subscription start,0
+customer-month grid rows with activity after churn,0

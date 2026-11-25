@@ -1,0 +1,7 @@
+tenure_band,customers,active_customer_months,arpu_kes,avg_data_mb,monthly_churn_pct
+a) 0-2 months,15943,43956,681.0,3666.0,0.0
+b) 3-5 months,15250,38572,787.0,4409.0,2.2
+c) 6-11 months,14292,65340,818.0,4556.0,2.32
+d) 12-23 months,12726,98069,850.0,4728.0,1.69
+e) 24-47 months,12430,145014,814.0,4393.0,1.11
+f) 48+ months,8957,169478,825.0,4564.0,1.11

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "JamiiMobile"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "389dcd34-d1df-5501-b1b9-112dbe19057a"
+  }
+}

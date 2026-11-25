@@ -1,0 +1,6 @@
+engagement_status,value_segment,customers,monthly_revenue_before_kes,monthly_revenue_now_kes,annualised_revenue_at_risk_kes
+Declining (>50% revenue drop),Silver (next 30%),178,123793.0,37141.0,1039824.0
+Declining (>50% revenue drop),Gold (next 20%),133,120292.0,34235.0,1032688.0
+Declining (>50% revenue drop),Bronze (bottom 40%),349,96211.0,30442.0,789228.0
+Declining (>50% revenue drop),Platinum (top 10%),40,72357.0,20307.0,624596.0
+Silent (no activity Aug-Oct),Bronze (bottom 40%),2,394.0,0.0,4732.0

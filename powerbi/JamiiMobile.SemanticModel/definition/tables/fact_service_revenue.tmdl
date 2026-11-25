@@ -1,0 +1,48 @@
+table fact_service_revenue
+	lineageTag: f4c67957-8a9d-5725-a028-4966477812b5
+
+	column customer_id
+		dataType: string
+		isHidden
+		lineageTag: 0e17bd78-0fa5-5eb3-ae28-b6278e43e002
+		summarizeBy: none
+		sourceColumn: customer_id
+
+	column month
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		isHidden
+		lineageTag: 4fa01cb3-21db-567b-85bf-2dafda7efef0
+		summarizeBy: none
+		sourceColumn: month
+
+	column service_type
+		dataType: string
+		lineageTag: cf3f67cc-d238-54b1-bd0a-657d2e8689b6
+		summarizeBy: none
+		sourceColumn: service_type
+
+	column revenue
+		dataType: decimal
+		formatString: #,0
+		lineageTag: 6a01781e-11c3-5ef7-845e-de2cc36c7a0e
+		summarizeBy: sum
+		sourceColumn: revenue
+
+	column transactions
+		dataType: int64
+		formatString: 0
+		lineageTag: 10f34af9-6c2e-5699-bae5-30b2e51f741f
+		summarizeBy: sum
+		sourceColumn: transactions
+
+	partition fact_service_revenue = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_service_revenue.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"customer_id", type text}, {"month", type date}, {"service_type", type text}, {"revenue", Currency.Type}, {"transactions", Int64.Type}}, "en-US")
+				in
+				    Typed
+

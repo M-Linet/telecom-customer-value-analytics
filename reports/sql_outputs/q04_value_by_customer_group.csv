@@ -1,0 +1,26 @@
+dim,grp,customers,revenue_kes,revenue_share_pct,arpu_kes
+age_group,25-34,8170,136424251.0,29.98,846.0
+age_group,35-44,6258,117625863.0,25.85,946.0
+age_group,18-24,6450,84133274.0,18.49,682.0
+age_group,45-54,4594,77124512.0,16.95,835.0
+age_group,55+,3024,39689487.0,8.72,673.0
+county,Nairobi,6594,109097651.0,23.98,829.0
+county,Mombasa,2756,44053700.0,9.68,799.0
+county,Kiambu,2628,42115820.0,9.26,812.0
+county,Nakuru,2243,37689301.0,8.28,840.0
+county,Kisumu,2258,35650088.0,7.84,782.0
+county,Machakos,1996,31500346.0,6.92,812.0
+county,Kakamega,1917,29348859.0,6.45,780.0
+county,Uasin Gishu,1645,25357552.0,5.57,786.0
+county,Kilifi,1664,25188100.0,5.54,810.0
+county,Nyeri,1375,21379333.0,4.7,788.0
+county,Turkana,1316,20293022.0,4.46,833.0
+county,Garissa,1250,19698895.0,4.33,845.0
+county,Unknown,854,13624720.0,2.99,811.0
+customer_type,Prepaid,25093,297600403.0,65.41,616.0
+customer_type,Postpaid,3403,157396984.0,34.59,2039.0
+plan_type,Prepaid Flex,15233,153305221.0,33.69,541.0
+plan_type,Prepaid Data Plus,9860,144295182.0,31.71,722.0
+plan_type,Postpaid Business,2059,140552679.0,30.89,2878.0
+plan_type,Postpaid Basic,902,11383102.0,2.5,605.0
+plan_type,Postpaid Premium,442,5461203.0,1.2,573.0

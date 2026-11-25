@@ -1,0 +1,4 @@
+check_name,rows
+acquisition date after data window,12
+complaint resolved before it was raised,30
+transactions for unknown customers,46

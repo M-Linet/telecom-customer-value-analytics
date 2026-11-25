@@ -1,0 +1,243 @@
+table _Measures
+	lineageTag: eb058f1e-cdd2-5b49-893f-39df67bab4b6
+
+	measure Revenue = SUM ( fact_customer_month[revenue] )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: 5006a8f9-9743-571f-a444-b0c8efdb9f11
+
+	measure 'Active Customer Months' = CALCULATE ( COUNTROWS ( fact_customer_month ), fact_customer_month[is_active] = TRUE () )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: d46c14f6-eefe-5622-b48f-a8b218cdca78
+
+	measure ARPU = DIVIDE ( [Revenue], [Active Customer Months] )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: 73e96928-c748-5f52-acba-06ed6c2b0c5c
+
+	measure 'Active Customers' = CALCULATE ( DISTINCTCOUNT ( fact_customer_month[customer_id] ), fact_customer_month[is_active] = TRUE () )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: 50d60e8d-9a5b-57d6-ae1d-679e99d26ed7
+
+	measure 'Latest Month' = MAX ( fact_customer_month[month] )
+		formatString: mmm yyyy
+		displayFolder: 1 Value
+		lineageTag: 41419591-f784-5b88-8b39-134dd8599d8d
+
+	measure 'Subscribers (latest month)' = VAR m = [Latest Month] RETURN CALCULATE ( COUNTROWS ( fact_customer_month ), fact_customer_month[month] = m )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: f519a480-56b6-5bae-97d6-8a62dbefbdd6
+
+	measure 'Active Customers (latest month)' = VAR m = [Latest Month] RETURN CALCULATE ( [Active Customers], fact_customer_month[month] = m )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: 4d96b70e-0417-52bf-89ea-cbc3b55628ef
+
+	measure 'Revenue (latest month)' = VAR m = [Latest Month] RETURN CALCULATE ( [Revenue], fact_customer_month[month] = m )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: 4243eef7-c148-506a-acb1-5f3979c1c7ea
+
+	measure 'ARPU (latest month)' = VAR m = [Latest Month] RETURN CALCULATE ( [ARPU], fact_customer_month[month] = m )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: f9da49a9-2f6d-556b-818e-5e9cd7c1392b
+
+	measure 'New Customers' = CALCULATE ( COUNTROWS ( fact_customer_month ), fact_customer_month[is_new_customer_month] = TRUE () )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: dd941240-c250-554a-9af4-21732a0ab0aa
+
+	measure 'Data MB per Active Customer' = DIVIDE ( SUM ( fact_customer_month[data_mb] ), [Active Customer Months] )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: 4ea86e56-0df8-5aee-a840-445eb5799b07
+
+	measure 'Voice Min per Active Customer' = DIVIDE ( SUM ( fact_customer_month[voice_minutes] ), [Active Customer Months] )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: 974a6082-0977-5248-bade-24b4053f832a
+
+	measure 'Service Revenue' = SUM ( fact_service_revenue[revenue] )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: aeff6acb-f3be-5a91-b510-55fc7093a573
+
+	measure 'Revenue Share of Selection' = DIVIDE ( [Revenue], CALCULATE ( [Revenue], ALLSELECTED ( dim_customer ) ) )
+		formatString: 0.0%
+		displayFolder: 1 Value
+		lineageTag: b71d43b6-72f2-59b4-9c66-d8da6a51c961
+
+	measure 'Customer Share of Selection' = DIVIDE ( DISTINCTCOUNT ( dim_customer[customer_id] ), CALCULATE ( DISTINCTCOUNT ( dim_customer[customer_id] ), ALLSELECTED ( dim_customer ) ) )
+		formatString: 0.0%
+		displayFolder: 1 Value
+		lineageTag: bfc60735-d6ab-5f2b-be36-99406b56774b
+
+	measure 'Revenue PY' = CALCULATE ( [Revenue], DATEADD ( dim_date[date], -1, YEAR ) )
+		formatString: #,0
+		displayFolder: 1 Value
+		lineageTag: 9a855599-4855-5667-abba-b2bb3a12e12d
+
+	measure 'Revenue YoY %' = IF ( NOT ISBLANK ( [Revenue PY] ), DIVIDE ( [Revenue] - [Revenue PY], [Revenue PY] ) )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 1 Value
+		lineageTag: 048009d9-0136-558d-aa76-2e6bba860d87
+
+	measure 'Opening Base' = CALCULATE ( COUNTROWS ( fact_customer_month ), fact_customer_month[in_opening_base] = TRUE () )
+		formatString: #,0
+		displayFolder: 2 Retention
+		lineageTag: c6ad6305-124f-5de6-ae13-8e1bcd4c2fc9
+
+	measure 'Churned Customers' = CALCULATE ( COUNTROWS ( fact_customer_month ), fact_customer_month[is_churn_month] = TRUE () )
+		formatString: #,0
+		displayFolder: 2 Retention
+		lineageTag: e6996e6d-5c15-5a45-832b-9253a4ca589d
+
+	measure 'Churn Rate %' = DIVIDE ( [Churned Customers], [Opening Base] )
+		formatString: 0.00%
+		displayFolder: 2 Retention
+		lineageTag: 403397ca-479f-51f7-b929-f6ef25a7073f
+
+	measure 'Avg Monthly Churn % (from May 2024)' = CALCULATE ( [Churn Rate %], KEEPFILTERS ( dim_date[date] >= DATE ( 2024, 5, 1 ) ) )
+		formatString: 0.00%
+		displayFolder: 2 Retention
+		lineageTag: 6f2585d7-5c4a-5234-a712-3d79704e1eb6
+
+	measure 'Annualised Churn %' = 1 - POWER ( 1 - [Avg Monthly Churn % (from May 2024)], 12 )
+		formatString: 0.0%
+		displayFolder: 2 Retention
+		lineageTag: 6ed3edcc-ad2e-501f-ab23-15113be5519c
+
+	measure 'Retention %' = DIVIDE ( AVERAGE ( cohort_retention[retention_pct] ), 100 )
+		formatString: 0.0%
+		displayFolder: 2 Retention
+		lineageTag: e4e64ba6-c9bc-56e1-a6f4-b3db5ddd2b8f
+
+	measure 'Retention Colour' =
+			VAR r = AVERAGE ( cohort_retention[retention_pct] )
+			RETURN SWITCH ( TRUE (), ISBLANK ( r ), BLANK (), r >= 95, "#0d366b", r >= 90, "#184f95", r >= 85, "#256abf", r >= 80, "#3987e5", r >= 75, "#6da7ec", r >= 70, "#9ec5f4", "#cde2fb" )
+		displayFolder: 2 Retention
+		lineageTag: b24ddb79-10cb-5880-ae09-88dd63e9275e
+
+	measure 'Retention Font Colour' = IF ( AVERAGE ( cohort_retention[retention_pct] ) >= 80, "#ffffff", "#2b2b29" )
+		displayFolder: 2 Retention
+		lineageTag: 8b994205-ab49-556b-ac27-77f9b8a3f094
+
+	measure 'Declining Customers' = CALCULATE ( DISTINCTCOUNT ( dim_customer[customer_id] ), dim_customer[engagement_status] IN { "Declining (>50% revenue drop)", "Silent (no activity Aug-Oct)" } )
+		formatString: #,0
+		displayFolder: 2 Retention
+		lineageTag: 36baece3-0f09-5988-8914-c0d620bcd775
+
+	measure 'Revenue at Risk (annualised)' = CALCULATE ( SUMX ( dim_customer, ( dim_customer[rev_may_jul_2026] - dim_customer[rev_aug_oct_2026] ) / 3 * 12 ), dim_customer[engagement_status] IN { "Declining (>50% revenue drop)", "Silent (no activity Aug-Oct)" } )
+		formatString: #,0
+		displayFolder: 2 Retention
+		lineageTag: 0feb580a-3db6-5fa4-b244-7a09fbdd9fd5
+
+	measure Complaints = COUNTROWS ( fact_complaints )
+		formatString: #,0
+		displayFolder: 3 Experience
+		lineageTag: c0069e1f-8deb-52e0-98bf-0778a7b325ef
+
+	measure 'Complaints per 1,000 Subscriber-Months' = DIVIDE ( [Complaints], COUNTROWS ( fact_customer_month ) ) * 1000
+		formatString: #,0.0
+		displayFolder: 3 Experience
+		lineageTag: e2af4744-6edc-5788-be52-412ff76be50f
+
+	measure 'Avg Days to Resolve' = AVERAGE ( fact_complaints[days_to_resolve] )
+		formatString: #,0.0
+		displayFolder: 3 Experience
+		lineageTag: 30ac2db1-d3fb-5b7d-b65f-da9daca6cc13
+
+	measure 'Unresolved Complaint %' = DIVIDE ( CALCULATE ( [Complaints], fact_complaints[resolution_status] <> "Resolved" ), [Complaints] )
+		formatString: 0.0%
+		displayFolder: 3 Experience
+		lineageTag: fbc95ed4-f9a7-561a-9c7e-8dc3566c60ef
+
+	measure 'Campaign Contacts' = COUNTROWS ( fact_campaigns )
+		formatString: #,0
+		displayFolder: 3 Experience
+		lineageTag: 737f70f5-27fa-563a-aac4-4a89ca6fd7d6
+
+	measure 'Campaign Acceptance %' = DIVIDE ( CALCULATE ( [Campaign Contacts], fact_campaigns[campaign_response] = "Accepted" ), [Campaign Contacts] )
+		formatString: 0.0%
+		displayFolder: 3 Experience
+		lineageTag: 35318752-ef1e-5399-b77f-3b56f2e9f71c
+
+	measure 'Churned % (complaint link)' = DIVIDE ( SUM ( complaint_churn_link[churned] ), SUM ( complaint_churn_link[customers] ) )
+		formatString: 0.0%
+		displayFolder: 3 Experience
+		lineageTag: b29fed46-cfa2-5244-83da-a4ee15989ee7
+
+	measure 'Δ Revenue' =
+			VAR f = MIN ( dim_date[month_start] )
+			VAR l = MAX ( dim_date[month_start] )
+			VAR a = CALCULATE ( [Revenue], dim_date[month_start] = f )
+			VAR b = CALCULATE ( [Revenue], dim_date[month_start] = l )
+			RETURN IF ( NOT ISBLANK ( a ) && a <> 0, FORMAT ( DIVIDE ( b - a, a ), "▲ 0%;▼ 0%;0%" ) & "  " & FORMAT ( f, "mmm yy" ) & " → " & FORMAT ( l, "mmm yy" ) )
+		displayFolder: 9 Formatting
+		lineageTag: a08530ca-0347-597b-a747-276a6bd774c1
+
+	measure 'Δ Active Customers' =
+			VAR f = MIN ( dim_date[month_start] )
+			VAR l = MAX ( dim_date[month_start] )
+			VAR a = CALCULATE ( [Active Customers], dim_date[month_start] = f )
+			VAR b = CALCULATE ( [Active Customers], dim_date[month_start] = l )
+			RETURN IF ( NOT ISBLANK ( a ) && a <> 0, FORMAT ( DIVIDE ( b - a, a ), "▲ 0%;▼ 0%;0%" ) & "  " & FORMAT ( f, "mmm yy" ) & " → " & FORMAT ( l, "mmm yy" ) )
+		displayFolder: 9 Formatting
+		lineageTag: cf81ce79-92d2-59fb-be16-16dddeaf242c
+
+	measure 'Δ ARPU' =
+			VAR f = MIN ( dim_date[month_start] )
+			VAR l = MAX ( dim_date[month_start] )
+			VAR a = CALCULATE ( [ARPU], dim_date[month_start] = f )
+			VAR b = CALCULATE ( [ARPU], dim_date[month_start] = l )
+			RETURN IF ( NOT ISBLANK ( a ) && a <> 0, FORMAT ( DIVIDE ( b - a, a ), "▲ 0%;▼ 0%;0%" ) & "  " & FORMAT ( f, "mmm yy" ) & " → " & FORMAT ( l, "mmm yy" ) )
+		displayFolder: 9 Formatting
+		lineageTag: 44ccdb32-8358-5163-bcd9-78fc751d8e6d
+
+	measure 'Monthly Churn Text' = FORMAT ( [Avg Monthly Churn % (from May 2024)], "0.00%" ) & " of the base closes each month"
+		displayFolder: 9 Formatting
+		lineageTag: dfe4cfed-42d2-5d20-b6ab-5329d550deeb
+
+	measure 'Risk Share Text' = FORMAT ( DIVIDE ( CALCULATE ( [Revenue at Risk (annualised)], dim_customer[value_segment] IN { "Platinum (top 10%)", "Gold (next 20%)" } ), [Revenue at Risk (annualised)] ), "0%" ) & " of it from Platinum and Gold"
+		displayFolder: 9 Formatting
+		lineageTag: 87be8e20-3f4e-5a09-ac0d-6f7177c90f92
+
+	measure 'County Status' = VAR r = [Complaints per 1,000 Subscriber-Months] RETURN IF ( ISBLANK ( r ), BLANK (), IF ( r >= 25, "▲ Watch", "● Normal" ) )
+		displayFolder: 9 Formatting
+		lineageTag: 5278a802-b309-547b-9ca6-bebab17e6d0f
+
+	measure 'Colour County Status' = IF ( [Complaints per 1,000 Subscriber-Months] >= 25, "#d95926", "#c3c2b7" )
+		displayFolder: 9 Formatting
+		lineageTag: b16eff05-ec5b-5f19-be82-1de1b6225f4e
+
+	measure 'Colour Segment Churn' = IF ( SELECTEDVALUE ( dim_customer[value_segment] ) = "Bronze (bottom 40%)", "#d95926", "#5f6773" )
+		displayFolder: 9 Formatting
+		lineageTag: fc71f67c-0186-5cb7-a39c-18692c344b8b
+
+	measure 'Colour Complaint Category' = IF ( SELECTEDVALUE ( fact_complaints[complaint_category] ) IN { "Network coverage", "Data speed" }, "#d95926", "#5f6773" )
+		displayFolder: 9 Formatting
+		lineageTag: d181fb8b-2e7a-58c6-9ac0-e260ed72f464
+
+	measure 'Colour Plan Churn' = IF ( SELECTEDVALUE ( dim_customer[plan_type] ) = "Prepaid Flex", "#d95926", "#5f6773" )
+		displayFolder: 9 Formatting
+		lineageTag: 67d802a9-6c8e-5e5b-9d4a-49fa6de92049
+
+	column Dummy
+		dataType: string
+		isHidden
+		lineageTag: d13bf28e-d4e0-531c-b539-12f36d164c7c
+		summarizeBy: none
+		sourceColumn: Dummy
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table [Dummy = text], {})
+				in
+				    Source
+
